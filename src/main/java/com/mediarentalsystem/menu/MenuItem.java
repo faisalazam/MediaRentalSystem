@@ -11,52 +11,78 @@ import com.mediarentalsystem.menuoptions.ShowAvailableMediaObjectsMenuOption;
 import com.mediarentalsystem.menuoptions.ShowRentalIncomeFromMediaObjectsMenuOption;
 import com.mediarentalsystem.menuoptions.ShowRentedMediaObjectsMenuOption;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import static java.util.Arrays.stream;
-
-enum MenuItem {
-    LOAD_MEDIA_OBJECTS("1", "Load Media objects...", new LoadMediaObjectsMenuOption()),
-    FIND_MEDIA_OBJECTS("2", "Find Media objects...", new FindMediaObjectsMenuOption()),
-    RENT_MEDIA_OBJECTS("3", "Rent Media objects...", new RentMediaObjectsMenuOption()),
-    RETURN_RENTED_MEDIA_OBJECTS("4", "Return Rented Media objects...", new ReturnRentedMediaObjectsMenuOption()),
-    SHOW_AVAILABLE_MEDIA_OBJECTS("6", "Show Available Media objects...", new ShowAvailableMediaObjectsMenuOption()),
-    SHOW_RENTED_MEDIA_OBJECTS("7", "Show Rented Media objects...", new ShowRentedMediaObjectsMenuOption()),
-    SHOW_RENTAL_INCOME("8", "Show Rental Income From Media objects...", new ShowRentalIncomeFromMediaObjectsMenuOption()),
-    QUIT("9", "Quit", new QuitMenuOption()),
-    INVALID_ITEM("-1", "", new InvalidMenuOption());
-
-    private static final Map<String, MenuItem> ID_TO_ITEM_MAP = new HashMap<>();
-
-    static {
-        // caching to avoid calculating again and again
-        stream(values()).forEach(menuItem -> ID_TO_ITEM_MAP.put(menuItem.itemId, menuItem));
+class LoadMediaObjectsMenuItemImpl extends AbstractMenuItem {
+    private LoadMediaObjectsMenuItemImpl() {
+        super("1", "Load Media objects...", new LoadMediaObjectsMenuOption());
     }
+}
 
-    private final String itemId;
-    private final String itemDisplayText;
-    private final MenuOptionRunnable runnable;
-
-    MenuItem(String itemId, String itemDisplayText, MenuOptionRunnable runnable) {
-        this.itemId = itemId;
-        this.itemDisplayText = itemDisplayText;
-        this.runnable = runnable;
+class FindMediaObjectsMenuItemImpl extends AbstractMenuItem {
+    private FindMediaObjectsMenuItemImpl() {
+        super("2", "Find Media objects...", new FindMediaObjectsMenuOption());
     }
+}
 
-    MenuOptionRunnable getRunnable() {
-        return runnable;
+class RentMediaObjectsMenuItemImpl extends AbstractMenuItem {
+    private RentMediaObjectsMenuItemImpl() {
+        super("3", "Rent Media objects...", new RentMediaObjectsMenuOption());
     }
+}
 
-    String getItemId() {
-        return itemId;
+class ReturnMediaObjectsMenuItemImpl extends AbstractMenuItem {
+    private ReturnMediaObjectsMenuItemImpl() {
+        super("4", "Return Rented Media objects...", new ReturnRentedMediaObjectsMenuOption());
     }
+}
 
-    String getItemDisplayText() {
-        return itemDisplayText;
+class ShowAvailableMediaObjectsMenuItemImpl extends AbstractMenuItem {
+    private ShowAvailableMediaObjectsMenuItemImpl() {
+        super("6", "Show Available Media objects...", new ShowAvailableMediaObjectsMenuOption());
     }
+}
+
+class ShowRentedMediaObjectsMenuItemImpl extends AbstractMenuItem {
+    private ShowRentedMediaObjectsMenuItemImpl() {
+        super("7", "Show Rented Media objects...", new ShowRentedMediaObjectsMenuOption());
+    }
+}
+
+class ShowRentalIncomeFromMediaObjectsMenuItemImpl extends AbstractMenuItem {
+    private ShowRentalIncomeFromMediaObjectsMenuItemImpl() {
+        super("8", "Show Rental Income From Media objects...", new ShowRentalIncomeFromMediaObjectsMenuOption());
+    }
+}
+
+class QuitMenuItemImpl extends AbstractMenuItem {
+    private QuitMenuItemImpl() {
+        super("9", "Quit", new QuitMenuOption());
+    }
+}
+
+class InvalidMenuItemImpl extends AbstractMenuItem {
+    private InvalidMenuItemImpl() {
+        super("-1", "", new InvalidMenuOption());
+    }
+}
+
+public interface MenuItem {
+    Map<String, MenuItem> ID_TO_ITEM_MAP = new HashMap<>();
+
+    String getItemId();
+
+    String getItemDisplayText();
+
+    MenuOptionRunnable getRunnable();
 
     static MenuItem convert(String option) {
-        return ID_TO_ITEM_MAP.getOrDefault(option, INVALID_ITEM);
+        return ID_TO_ITEM_MAP.getOrDefault(option, ID_TO_ITEM_MAP.get("-1"));
+    }
+
+    static Collection<MenuItem> getMenuItems() {
+        return ID_TO_ITEM_MAP.values();
     }
 }
