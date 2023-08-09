@@ -11,10 +11,6 @@ import com.mediarentalsystem.menuoptions.ShowAvailableMediaObjectsMenuOption;
 import com.mediarentalsystem.menuoptions.ShowRentalIncomeFromMediaObjectsMenuOption;
 import com.mediarentalsystem.menuoptions.ShowRentedMediaObjectsMenuOption;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-
 class LoadMediaObjectsMenuItemImpl extends AbstractMenuItem {
     private LoadMediaObjectsMenuItemImpl() {
         super("1", "Load Media objects...", new LoadMediaObjectsMenuOption());
@@ -70,19 +66,9 @@ class InvalidMenuItemImpl extends AbstractMenuItem {
 }
 
 public interface MenuItem {
-    Map<String, MenuItem> ID_TO_ITEM_MAP = new HashMap<>();
-
     String getItemId();
 
     String getItemDisplayText();
 
     MenuOptionRunnable getRunnable();
-
-    static MenuItem convert(String option) {
-        return ID_TO_ITEM_MAP.getOrDefault(option, ID_TO_ITEM_MAP.get("-1"));
-    }
-
-    static Collection<MenuItem> getMenuItems() {
-        return ID_TO_ITEM_MAP.values();
-    }
 }

@@ -4,8 +4,8 @@ import com.mediarentalsystem.utils.InputScanner;
 
 import java.util.Scanner;
 
-import static com.mediarentalsystem.menu.MenuItem.convert;
-import static com.mediarentalsystem.menu.MenuItem.getMenuItems;
+import static com.mediarentalsystem.menu.MenuItemsInitializer.convert;
+import static com.mediarentalsystem.menu.MenuItemsInitializer.getMenuItems;
 import static com.mediarentalsystem.utils.Const.LINE_FEED;
 
 public class MenuHandler {
