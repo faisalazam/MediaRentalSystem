@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/javassist-3.29.2-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/slf4j-simple-2.0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jackson-annotations-2.15.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/slf4j-api-2.0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/reflections-0.10.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jackson-databind-2.15.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jackson-core-2.15.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
