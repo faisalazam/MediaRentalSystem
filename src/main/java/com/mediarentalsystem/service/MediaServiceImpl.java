@@ -9,7 +9,6 @@ import java.util.Collection;
 
 import static com.mediarentalsystem.utils.FileUtils.getFilesToLoad;
 import static java.util.Collections.emptyList;
-import static java.util.stream.Collectors.toList;
 
 public class MediaServiceImpl implements MediaService {
     private final MediaRepository mediaRepository;
@@ -28,25 +27,25 @@ public class MediaServiceImpl implements MediaService {
     @Override
     public Collection<Media> findMediaByTitle(String title) {
         if (title == null || title.trim().isEmpty()) {
-            emptyList();
+            return emptyList();
         }
         return mediaRepository.findAllMedias().stream()
                 .filter(media -> media.getTitle().trim().toLowerCase().contains(title.trim().toLowerCase()))
-                .collect(toList());
+                .toList();
     }
 
     @Override
     public Collection<Media> findRentedMedias() {
         return mediaRepository.findAllMedias().stream()
                 .filter(media -> !media.isAvailable())
-                .collect(toList());
+                .toList();
     }
 
     @Override
     public Collection<Media> findAvailableMedias() {
         return mediaRepository.findAllMedias().stream()
-                .filter(media -> media.isAvailable())
-                .collect(toList());
+                .filter(Media::isAvailable)
+                .toList();
     }
 
     @Override

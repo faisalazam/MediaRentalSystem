@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import static com.fasterxml.jackson.annotation.JsonCreator.Mode.PROPERTIES;
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
 @JsonInclude(NON_NULL)
@@ -12,7 +13,7 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 public class MovieDVD extends Media {
     private final double size;
 
-    @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
+    @JsonCreator(mode = PROPERTIES)
     public MovieDVD(@JsonProperty("id") int id,
                     @JsonProperty("title") String title,
                     @JsonProperty("year") int year,

@@ -7,8 +7,8 @@ import com.mediarentalsystem.utils.InputScanner;
 import java.util.Scanner;
 
 public interface MenuOptionRunnable {
-    final Scanner inputScanner = InputScanner.getInstance();
-    final MediaService mediaService = new MediaServiceImpl();
+    Scanner inputScanner = InputScanner.getInstance();
+    MediaService mediaService = new MediaServiceImpl();
 
-    public void run();
+    void run();
 }

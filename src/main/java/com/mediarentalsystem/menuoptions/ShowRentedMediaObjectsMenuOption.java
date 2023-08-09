@@ -6,7 +6,7 @@ import java.util.Collection;
 
 import static com.mediarentalsystem.utils.Const.LINE_FEED;
 
-public class ShowRentedMediaObjectsMenuOption implements com.mediarentalsystem.menuoptions.MenuOptionRunnable {
+public class ShowRentedMediaObjectsMenuOption implements MenuOptionRunnable {
     public void run() {
         final Collection<Media> rentedMedias = mediaService.findRentedMedias();
         if (rentedMedias.isEmpty()) {

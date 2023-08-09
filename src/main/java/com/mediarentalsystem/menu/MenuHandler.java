@@ -26,11 +26,7 @@ public class MenuHandler {
 
             final String menuOption = scanner.nextLine();
             menuItem = convert(menuOption);
-            processOption(menuItem);
+            menuItem.getRunnable().run();
         } while (menuItem != QUIT);
-    }
-
-    private void processOption(final MenuItem menuItem) {
-        menuItem.getRunnable().run();
     }
 }

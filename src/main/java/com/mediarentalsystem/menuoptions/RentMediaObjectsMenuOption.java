@@ -1,8 +1,13 @@
 package com.mediarentalsystem.menuoptions;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import static com.mediarentalsystem.utils.Const.LINE_FEED;
 
-public class RentMediaObjectsMenuOption implements com.mediarentalsystem.menuoptions.MenuOptionRunnable {
+public class RentMediaObjectsMenuOption implements MenuOptionRunnable {
+    private static final Logger log = LoggerFactory.getLogger(RentMediaObjectsMenuOption.class.getName());
+
     public void run() {
         System.out.print(LINE_FEED + "Enter the id: ");
         final String idStr = inputScanner.nextLine();
@@ -10,6 +15,7 @@ public class RentMediaObjectsMenuOption implements com.mediarentalsystem.menuopt
         try {
             id = Integer.parseInt(idStr);
         } catch (NumberFormatException e) {
+            log.debug("Error parsing the input", e);
             System.out.println(LINE_FEED + "Enter a number for the 'id'.");
             return;
         }

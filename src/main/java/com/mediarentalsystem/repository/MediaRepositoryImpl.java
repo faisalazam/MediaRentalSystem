@@ -10,8 +10,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static java.util.stream.Collectors.toList;
-
 public class MediaRepositoryImpl implements MediaRepository {
     private static double totalRentalIncome = 0.0;
     private static final Map<Integer, Media> ID_TO_MEDIA_MAP = new HashMap<>();
@@ -24,7 +22,7 @@ public class MediaRepositoryImpl implements MediaRepository {
 
     @Override
     public boolean loadMedia(final File[] filesToLoad) {
-        final List<Media> medias = Arrays.stream(filesToLoad).map(mediaFileParser::parse).collect(toList());
+        final List<Media> medias = Arrays.stream(filesToLoad).map(mediaFileParser::parse).toList();
         if (medias.isEmpty()) {
             return false;
         }
@@ -72,11 +70,12 @@ public class MediaRepositoryImpl implements MediaRepository {
         return totalRentalIncome;
     }
 
-    private void updateAvailability(Media media, boolean availablibility) {
-        media.setAvailable(availablibility);
+    private void updateAvailability(Media media, boolean availability) {
+        media.setAvailable(availability);
         updateAvailability(media);
     }
 
+    @SuppressWarnings("unused")
     private void updateAvailability(Media media) {
         // TODO update the file with the availability information in the actual Media json file
     }

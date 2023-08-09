@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import static com.fasterxml.jackson.annotation.JsonCreator.Mode.PROPERTIES;
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
 @JsonInclude(NON_NULL)
@@ -12,7 +13,7 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 public class EBook extends Media {
     private final int chapters;
 
-    @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
+    @JsonCreator(mode = PROPERTIES)
     public EBook(@JsonProperty("id") int id,
                  @JsonProperty("title") String title,
                  @JsonProperty("year") int year,

@@ -6,7 +6,7 @@ import java.util.Collection;
 
 import static com.mediarentalsystem.utils.Const.LINE_FEED;
 
-public class FindMediaObjectsMenuOption implements com.mediarentalsystem.menuoptions.MenuOptionRunnable {
+public class FindMediaObjectsMenuOption implements MenuOptionRunnable {
     public void run() {
         System.out.print(LINE_FEED + "Enter the title: ");
         final String title = inputScanner.nextLine();
