@@ -7,6 +7,11 @@ import static com.mediarentalsystem.menu.ParentMenu.INFO;
 
 class ShowRentedMediaObjectsMenuItem extends AbstractMenuItem {
     private ShowRentedMediaObjectsMenuItem() {
-        super(false, INFO, "2", "Show Rented Media objects...", new ShowRentedMediaObjectsRunner());
+        super(false,
+                INFO,
+                "2",
+                "Show Rented Media objects...",
+                new ShowRentedMediaObjectsRunner()
+        );
     }
 }

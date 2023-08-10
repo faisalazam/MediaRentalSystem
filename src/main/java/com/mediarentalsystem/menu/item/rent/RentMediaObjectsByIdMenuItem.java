@@ -7,6 +7,11 @@ import static com.mediarentalsystem.menu.ParentMenu.RENT;
 
 class RentMediaObjectsByIdMenuItem extends AbstractMenuItem {
     private RentMediaObjectsByIdMenuItem() {
-        super(false, RENT, "1", "Rent Media objects by id...", new RentMediaObjectsByIdRunner());
+        super(false,
+                RENT,
+                "1",
+                "Rent Media objects by id...",
+                new RentMediaObjectsByIdRunner()
+        );
     }
 }

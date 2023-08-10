@@ -7,6 +7,11 @@ import static com.mediarentalsystem.menu.ParentMenu.RENT;
 
 class ReturnMediaObjectsMenuItem extends AbstractMenuItem {
     private ReturnMediaObjectsMenuItem() {
-        super(false, RENT, "2", "Return Rented Media objects...", new ReturnRentedMediaObjectsRunner());
+        super(false,
+                RENT,
+                "2",
+                "Return Rented Media objects...",
+                new ReturnRentedMediaObjectsRunner()
+        );
     }
 }

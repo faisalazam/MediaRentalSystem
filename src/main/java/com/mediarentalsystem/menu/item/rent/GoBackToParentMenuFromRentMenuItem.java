@@ -7,6 +7,11 @@ import static com.mediarentalsystem.menu.ParentMenu.RENT;
 
 class GoBackToParentMenuFromRentMenuItem extends AbstractMenuItem {
     private GoBackToParentMenuFromRentMenuItem() {
-        super(false, RENT, "9", "Go back to parent menu...", new GoBackToParentRunner());
+        super(false,
+                RENT,
+                "9",
+                "Go back to parent menu...",
+                new GoBackToParentRunner()
+        );
     }
 }

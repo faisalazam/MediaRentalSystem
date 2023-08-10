@@ -7,6 +7,11 @@ import static com.mediarentalsystem.menu.ParentMenu.MAIN;
 
 class SystemInfoMenuItem extends AbstractMenuItem {
     private SystemInfoMenuItem() {
-        super(true, MAIN, "4", "Show System Info...", new SystemInfoRunner());
+        super(true,
+                MAIN,
+                "4",
+                "Show System Info...",
+                new SystemInfoRunner()
+        );
     }
 }

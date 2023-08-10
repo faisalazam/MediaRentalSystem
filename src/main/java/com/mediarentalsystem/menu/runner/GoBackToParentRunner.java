@@ -1,9 +1,10 @@
 package com.mediarentalsystem.menu.runner;
 
-import com.mediarentalsystem.menu.MenuHandler;
+import static com.mediarentalsystem.menu.MenuHandler.getInstance;
 
 public class GoBackToParentRunner implements MenuOptionRunnable {
+    @Override
     public void run() {
-        MenuHandler.getInstance().goBackToParentMenu();
+        getInstance().goBackToParentMenu();
     }
 }

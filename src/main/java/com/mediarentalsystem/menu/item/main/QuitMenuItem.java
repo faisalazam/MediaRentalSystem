@@ -7,6 +7,11 @@ import static com.mediarentalsystem.menu.ParentMenu.MAIN;
 
 public class QuitMenuItem extends AbstractMenuItem {
     private QuitMenuItem() {
-        super(false, MAIN, "9", "Quit", new QuitRunner());
+        super(false,
+                MAIN,
+                "9",
+                "Quit",
+                new QuitRunner()
+        );
     }
 }

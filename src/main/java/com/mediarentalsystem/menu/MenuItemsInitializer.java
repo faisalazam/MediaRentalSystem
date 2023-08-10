@@ -18,11 +18,11 @@ import static com.mediarentalsystem.menu.ParentMenu.MAIN;
 
 class MenuItemsInitializer {
     private static final Map<ParentMenu, Map<String, MenuItem>> ID_TO_ITEM_MAP = new HashMap<>();
-    private static final Logger log = LoggerFactory.getLogger(MenuItemsInitializer.class.getName());
+    private static final Logger LOGGER = LoggerFactory.getLogger(MenuItemsInitializer.class);
 
     static {
         // caching to avoid calculating again and again
-        log.info("Initializing menu items...");
+        LOGGER.info("Initializing menu items...");
 
         final Reflections reflections = new Reflections(MAIN_PACKAGE);
         final Set<Class<? extends AbstractMenuItem>> menuItemsSubTypes = reflections.getSubTypesOf(AbstractMenuItem.class);

@@ -7,6 +7,11 @@ import static com.mediarentalsystem.menu.ParentMenu.MAIN;
 
 public class InvalidMenuItem extends AbstractMenuItem {
     private InvalidMenuItem() {
-        super(false, MAIN, "-1", "", new InvalidRunner());
+        super(false,
+                MAIN,
+                "-1",
+                "",
+                new InvalidRunner())
+        ;
     }
 }

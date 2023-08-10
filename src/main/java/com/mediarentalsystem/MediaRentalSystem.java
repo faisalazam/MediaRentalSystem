@@ -9,10 +9,10 @@ import static com.mediarentalsystem.menu.ParentMenu.MAIN;
 public class MediaRentalSystem {
     public static final String MAIN_PACKAGE = "com.mediarentalsystem";
 
-    private static final Logger log = LoggerFactory.getLogger(MediaRentalSystem.class.getName());
+    private static final Logger LOGGER = LoggerFactory.getLogger(MediaRentalSystem.class);
 
     public static void main(String[] args) {
-        log.info("**************MediaRental Application started**************");
+        LOGGER.info("**************MediaRental Application started**************");
         MenuHandler.getInstance().createMainMenu(MAIN);
     }
 }

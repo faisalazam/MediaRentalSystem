@@ -1,12 +1,13 @@
 package com.mediarentalsystem.menu.runner.main;
 
-import com.mediarentalsystem.menu.MenuHandler;
 import com.mediarentalsystem.menu.runner.MenuOptionRunnable;
 
+import static com.mediarentalsystem.menu.MenuHandler.getInstance;
 import static com.mediarentalsystem.menu.ParentMenu.FIND;
 
 public class FindMediaObjectsRunner implements MenuOptionRunnable {
+    @Override
     public void run() {
-        MenuHandler.getInstance().createMainMenu(FIND);
+        getInstance().createMainMenu(FIND);
     }
 }

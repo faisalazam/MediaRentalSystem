@@ -5,6 +5,7 @@ import com.mediarentalsystem.menu.runner.MenuOptionRunnable;
 import static com.mediarentalsystem.utils.Const.LINE_FEED;
 
 public class LoadMediaObjectsRunner implements MenuOptionRunnable {
+    @Override
     public void run() {
         System.out.print(LINE_FEED + "Enter path (directory) where to load from: ");
         final String pathToLoadFrom = inputScanner.nextLine();
