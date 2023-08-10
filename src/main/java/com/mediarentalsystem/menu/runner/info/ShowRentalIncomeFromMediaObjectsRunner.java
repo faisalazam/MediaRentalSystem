@@ -1,10 +1,10 @@
-package com.mediarentalsystem.menuoptions.info;
+package com.mediarentalsystem.menu.runner.info;
 
-import com.mediarentalsystem.menuoptions.MenuOptionRunnable;
+import com.mediarentalsystem.menu.runner.MenuOptionRunnable;
 
 import static com.mediarentalsystem.utils.Const.LINE_FEED;
 
-public class ShowRentalIncomeFromMediaObjectsMenuOption implements MenuOptionRunnable {
+public class ShowRentalIncomeFromMediaObjectsRunner implements MenuOptionRunnable {
     public void run() {
         System.out.println(LINE_FEED + "Total Rental Income is: " + mediaService.getTotalRentalIncome() + LINE_FEED);
     }

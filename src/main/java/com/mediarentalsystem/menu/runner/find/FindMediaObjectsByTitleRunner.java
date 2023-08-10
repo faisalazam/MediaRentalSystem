@@ -1,13 +1,13 @@
-package com.mediarentalsystem.menuoptions.find;
+package com.mediarentalsystem.menu.runner.find;
 
-import com.mediarentalsystem.menuoptions.MenuOptionRunnable;
+import com.mediarentalsystem.menu.runner.MenuOptionRunnable;
 import com.mediarentalsystem.model.media.Media;
 
 import java.util.Collection;
 
 import static com.mediarentalsystem.utils.Const.LINE_FEED;
 
-public class FindByTitleMediaObjectsMenuOption implements MenuOptionRunnable {
+public class FindMediaObjectsByTitleRunner implements MenuOptionRunnable {
     public void run() {
         System.out.print(LINE_FEED + "Enter the title: ");
         final String title = inputScanner.nextLine();

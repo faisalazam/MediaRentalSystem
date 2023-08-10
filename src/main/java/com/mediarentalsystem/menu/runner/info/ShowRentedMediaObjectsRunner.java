@@ -1,13 +1,13 @@
-package com.mediarentalsystem.menuoptions.info;
+package com.mediarentalsystem.menu.runner.info;
 
-import com.mediarentalsystem.menuoptions.MenuOptionRunnable;
+import com.mediarentalsystem.menu.runner.MenuOptionRunnable;
 import com.mediarentalsystem.model.media.Media;
 
 import java.util.Collection;
 
 import static com.mediarentalsystem.utils.Const.LINE_FEED;
 
-public class ShowRentedMediaObjectsMenuOption implements MenuOptionRunnable {
+public class ShowRentedMediaObjectsRunner implements MenuOptionRunnable {
     public void run() {
         final Collection<Media> rentedMedias = mediaService.findRentedMedias();
         if (rentedMedias.isEmpty()) {

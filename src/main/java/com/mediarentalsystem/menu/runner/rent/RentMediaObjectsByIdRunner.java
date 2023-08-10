@@ -1,13 +1,13 @@
-package com.mediarentalsystem.menuoptions.rent;
+package com.mediarentalsystem.menu.runner.rent;
 
-import com.mediarentalsystem.menuoptions.MenuOptionRunnable;
+import com.mediarentalsystem.menu.runner.MenuOptionRunnable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static com.mediarentalsystem.utils.Const.LINE_FEED;
 
-public class RentMediaObjectsByIdMenuOption implements MenuOptionRunnable {
-    private static final Logger log = LoggerFactory.getLogger(RentMediaObjectsByIdMenuOption.class.getName());
+public class RentMediaObjectsByIdRunner implements MenuOptionRunnable {
+    private static final Logger log = LoggerFactory.getLogger(RentMediaObjectsByIdRunner.class.getName());
 
     public void run() {
         System.out.print(LINE_FEED + "Enter the id: ");

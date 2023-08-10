@@ -1,6 +1,6 @@
 package com.mediarentalsystem.menu;
 
-import com.mediarentalsystem.menuoptions.MenuOptionRunnable;
+import com.mediarentalsystem.menu.runner.MenuOptionRunnable;
 
 abstract class AbstractMenuItem implements MenuItem {
     private final ParentMenu parentMenu;

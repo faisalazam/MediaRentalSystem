@@ -1,4 +1,4 @@
-package com.mediarentalsystem.menuoptions;
+package com.mediarentalsystem.menu.runner;
 
 import com.mediarentalsystem.service.MediaService;
 import com.mediarentalsystem.service.MediaServiceImpl;

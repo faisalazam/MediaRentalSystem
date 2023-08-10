@@ -1,10 +1,10 @@
-package com.mediarentalsystem.menuoptions.main;
+package com.mediarentalsystem.menu.runner.main;
 
-import com.mediarentalsystem.menuoptions.MenuOptionRunnable;
+import com.mediarentalsystem.menu.runner.MenuOptionRunnable;
 
 import static com.mediarentalsystem.utils.Const.LINE_FEED;
 
-public class InvalidMenuOption implements MenuOptionRunnable {
+public class InvalidRunner implements MenuOptionRunnable {
     public void run() {
         System.out.println(LINE_FEED + "Invalid selection. Please try again." + LINE_FEED);
     }

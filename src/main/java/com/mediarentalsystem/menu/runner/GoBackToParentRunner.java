@@ -1,8 +1,8 @@
-package com.mediarentalsystem.menuoptions;
+package com.mediarentalsystem.menu.runner;
 
 import com.mediarentalsystem.menu.MenuHandler;
 
-public class GoBackToParentMenuOption implements MenuOptionRunnable {
+public class GoBackToParentRunner implements MenuOptionRunnable {
     public void run() {
         MenuHandler.getInstance().goBackToParentMenu();
     }

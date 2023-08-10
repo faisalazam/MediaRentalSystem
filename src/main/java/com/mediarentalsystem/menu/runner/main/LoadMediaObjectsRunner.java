@@ -1,10 +1,10 @@
-package com.mediarentalsystem.menuoptions.main;
+package com.mediarentalsystem.menu.runner.main;
 
-import com.mediarentalsystem.menuoptions.MenuOptionRunnable;
+import com.mediarentalsystem.menu.runner.MenuOptionRunnable;
 
 import static com.mediarentalsystem.utils.Const.LINE_FEED;
 
-public class LoadMediaObjectsMenuOption implements MenuOptionRunnable {
+public class LoadMediaObjectsRunner implements MenuOptionRunnable {
     public void run() {
         System.out.print(LINE_FEED + "Enter path (directory) where to load from: ");
         final String pathToLoadFrom = inputScanner.nextLine();
