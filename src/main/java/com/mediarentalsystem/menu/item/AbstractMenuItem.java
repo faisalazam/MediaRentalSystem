@@ -1,19 +1,20 @@
-package com.mediarentalsystem.menu;
+package com.mediarentalsystem.menu.item;
 
+import com.mediarentalsystem.menu.ParentMenu;
 import com.mediarentalsystem.menu.runner.MenuOptionRunnable;
 
-abstract class AbstractMenuItem implements MenuItem {
+public abstract class AbstractMenuItem implements MenuItem {
     private final ParentMenu parentMenu;
     private final String itemId;
     private final boolean hasSubMenu;
     private final String itemDisplayText;
     private final MenuOptionRunnable runnable;
 
-    AbstractMenuItem(boolean hasSubMenu,
-                     ParentMenu parentMenu,
-                     String itemId,
-                     String itemDisplayText,
-                     MenuOptionRunnable runnable) {
+    protected AbstractMenuItem(boolean hasSubMenu,
+                               ParentMenu parentMenu,
+                               String itemId,
+                               String itemDisplayText,
+                               MenuOptionRunnable runnable) {
         this.hasSubMenu = hasSubMenu;
         this.itemId = itemId;
         this.runnable = runnable;

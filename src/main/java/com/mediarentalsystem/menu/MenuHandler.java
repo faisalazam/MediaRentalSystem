@@ -1,5 +1,8 @@
 package com.mediarentalsystem.menu;
 
+import com.mediarentalsystem.menu.item.MenuItem;
+import com.mediarentalsystem.menu.item.main.InvalidMenuItem;
+import com.mediarentalsystem.menu.item.main.QuitMenuItem;
 import com.mediarentalsystem.utils.InputScanner;
 
 import java.util.Scanner;
@@ -45,7 +48,7 @@ public class MenuHandler {
             menuItem = readSelectionAndConvert(parentMenu);
             updateBackMenusIfRequired();
             menuItem.getRunnable().run();
-        } while (!(menuItem instanceof QuitMenuItemImpl));
+        } while (!(menuItem instanceof QuitMenuItem));
     }
 
     public void goBackToParentMenu() {
@@ -58,7 +61,7 @@ public class MenuHandler {
 
     private void presentMenu(ParentMenu parentMenu) {
         getMenuItems(parentMenu).stream()
-                .filter(item -> !(item instanceof InvalidMenuItemImpl))
+                .filter(item -> !(item instanceof InvalidMenuItem))
                 .map(item -> item.getItemId() + ": " + item.getItemDisplayText())
                 .forEach(System.out::println);
         System.out.print(LINE_FEED + "Enter your selection: ");

@@ -1,5 +1,7 @@
 package com.mediarentalsystem.menu;
 
+import com.mediarentalsystem.menu.item.AbstractMenuItem;
+import com.mediarentalsystem.menu.item.MenuItem;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
