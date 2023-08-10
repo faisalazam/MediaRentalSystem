@@ -4,19 +4,19 @@ import com.mediarentalsystem.model.media.Media;
 
 import java.util.Collection;
 
-public class FindMediaObjectsByTitleRunner extends AbstractFindMediaObjectsRunner {
+public class FindMediaObjectsByYearRunner extends AbstractFindMediaObjectsRunner {
     @Override
     String getPromptText() {
-        return "Enter the title: ";
+        return "Enter the year: ";
     }
 
     @Override
     String getErrorText(String userInput) {
-        return "There is no media with this title: " + userInput;
+        return "There is no media with this year: " + userInput;
     }
 
     @Override
     Collection<Media> matchingMedias(String userInput) {
-        return mediaService.findMediaByTitle(userInput);
+        return mediaService.findMediaByYear(userInput);
     }
 }

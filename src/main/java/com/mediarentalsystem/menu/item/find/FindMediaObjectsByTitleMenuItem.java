@@ -7,6 +7,11 @@ import static com.mediarentalsystem.menu.ParentMenu.FIND;
 
 class FindMediaObjectsByTitleMenuItem extends AbstractMenuItem {
     private FindMediaObjectsByTitleMenuItem() {
-        super(false, FIND, "1", "Find Media objects by title...", new FindMediaObjectsByTitleRunner());
+        super(false,
+                FIND,
+                "1",
+                "Find Media objects by title...",
+                new FindMediaObjectsByTitleRunner()
+        );
     }
 }

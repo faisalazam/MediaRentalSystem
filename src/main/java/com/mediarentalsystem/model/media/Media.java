@@ -26,7 +26,7 @@ public abstract class Media {
     static {
         final Reflections reflections = new Reflections(MAIN_PACKAGE);
         final Set<Class<? extends Media>> mediaSubTypes = reflections.getSubTypesOf(Media.class);
-        mediaSubTypes.forEach(mediaSubType -> NAME_TO_CLASS_MAP.put(mediaSubType.getSimpleName(), mediaSubType));
+        mediaSubTypes.forEach(mediaSubType -> NAME_TO_CLASS_MAP.put(mediaSubType.getSimpleName().toLowerCase(), mediaSubType));
     }
 
     public Media(int id, int year, double rent, String title) {
@@ -64,7 +64,7 @@ public abstract class Media {
     }
 
     public static Class<? extends Media> getClazz(String name) {
-        return NAME_TO_CLASS_MAP.get(name);
+        return NAME_TO_CLASS_MAP.get(name.toLowerCase());
     }
 
     @Override

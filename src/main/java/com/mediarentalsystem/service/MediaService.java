@@ -18,4 +18,10 @@ public interface MediaService {
     boolean returnRentedMediaById(int id);
 
     double getTotalRentalIncome();
+
+    Collection<Media> findMediaByType(String type);
+
+    Collection<Media> findMediaByYear(String year);
+
+    Collection<Media> findMediaByYear(String fromYear, String toYear);
 }
