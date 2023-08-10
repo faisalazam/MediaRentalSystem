@@ -1,5 +1,6 @@
-package com.mediarentalsystem.menuoptions;
+package com.mediarentalsystem.menuoptions.info;
 
+import com.mediarentalsystem.menuoptions.MenuOptionRunnable;
 import com.mediarentalsystem.model.media.Media;
 
 import java.util.Collection;
@@ -10,10 +11,11 @@ public class ShowRentedMediaObjectsMenuOption implements MenuOptionRunnable {
     public void run() {
         final Collection<Media> rentedMedias = mediaService.findRentedMedias();
         if (rentedMedias.isEmpty()) {
-            System.out.println(LINE_FEED + "There are no Media objects which are rented.");
+            System.out.println(LINE_FEED + "There are no Media objects which are rented." + LINE_FEED);
             return;
         }
         System.out.println(LINE_FEED + "Below are the Media objects which are rented:");
         rentedMedias.forEach(System.out::println);
+        System.out.println();
     }
 }

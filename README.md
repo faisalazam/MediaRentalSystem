@@ -1,0 +1,1 @@
+A Java command line (CLI) application for the management of media rentals.

@@ -1,4 +1,6 @@
-package com.mediarentalsystem.menuoptions;
+package com.mediarentalsystem.menuoptions.main;
+
+import com.mediarentalsystem.menuoptions.MenuOptionRunnable;
 
 import static com.mediarentalsystem.utils.Const.LINE_FEED;
 
