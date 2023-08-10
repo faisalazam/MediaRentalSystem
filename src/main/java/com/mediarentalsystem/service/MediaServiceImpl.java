@@ -53,31 +53,16 @@ public class MediaServiceImpl implements MediaService {
     }
 
     @Override
-    public Collection<Media> findMediaByYear(String year) {
-        if (year == null || year.trim().isEmpty()) {
-            return emptyList();
-        }
-        final int yearInt = parseYear(year);
-        if (yearInt == -1) {
-            return emptyList();
-        }
+    public Collection<Media> findMediaByYear(int year) {
         return mediaRepository.findAllMedias().stream()
-                .filter(media -> media.getYear() == yearInt)
+                .filter(media -> media.getYear() == year)
                 .toList();
     }
 
     @Override
-    public Collection<Media> findMediaByYear(String fromYear, String toYear) {
-        if (fromYear == null || fromYear.trim().isEmpty() || toYear == null || toYear.trim().isEmpty()) {
-            return emptyList();
-        }
-        final int fromYearInt = parseYear(fromYear);
-        final int toYearInt = parseYear(toYear);
-        if (fromYearInt == -1 || toYearInt == -1) {
-            return emptyList();
-        }
+    public Collection<Media> findMediaByYear(int fromYear, int toYear) {
         return mediaRepository.findAllMedias().stream()
-                .filter(media -> media.getYear() >= fromYearInt && media.getYear() <= toYearInt)
+                .filter(media -> media.getYear() >= fromYear && media.getYear() <= toYear)
                 .toList();
     }
 
@@ -109,15 +94,5 @@ public class MediaServiceImpl implements MediaService {
     @Override
     public double getTotalRentalIncome() {
         return mediaRepository.getTotalRentalIncome();
-    }
-
-    private static int parseYear(String year) {
-        try {
-            return Integer.parseInt(year);
-        } catch (NumberFormatException e) {
-            LOGGER.debug("Failed to parse year. Enter proper value for year as '" + year + "' is invalid", e);
-            System.out.println("Failed to parse year. Enter proper value for year as '" + year + "' is invalid");
-            return -1;
-        }
     }
 }

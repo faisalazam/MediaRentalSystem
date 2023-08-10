@@ -21,7 +21,7 @@ public interface MediaService {
 
     Collection<Media> findMediaByType(String type);
 
-    Collection<Media> findMediaByYear(String year);
+    Collection<Media> findMediaByYear(int year);
 
-    Collection<Media> findMediaByYear(String fromYear, String toYear);
+    Collection<Media> findMediaByYear(int fromYear, int toYear);
 }

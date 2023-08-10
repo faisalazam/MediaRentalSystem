@@ -19,7 +19,9 @@ abstract class AbstractFindMediaObjectsRunner implements MenuOptionRunnable {
         System.out.print(LINE_FEED + getPromptText());
         final String userInput = inputScanner.nextLine();
         final Collection<Media> matchingMedia = matchingMedias(userInput);
-        if (matchingMedia.isEmpty()) {
+        if (matchingMedia == null) {
+            return;
+        } else if (matchingMedia.isEmpty()) {
             System.out.println(getErrorText(userInput) + LINE_FEED);
             return;
         }
