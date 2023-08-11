@@ -4,7 +4,6 @@ import com.mediarentalsystem.menu.item.AbstractMenuItem;
 import com.mediarentalsystem.menu.item.MenuItem;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -15,10 +14,11 @@ import java.util.Set;
 
 import static com.mediarentalsystem.MediaRentalSystem.MAIN_PACKAGE;
 import static com.mediarentalsystem.menu.ParentMenu.MAIN;
+import static org.slf4j.LoggerFactory.getLogger;
 
 class MenuItemsInitializer {
     private static final Map<ParentMenu, Map<String, MenuItem>> ID_TO_ITEM_MAP = new HashMap<>();
-    private static final Logger LOGGER = LoggerFactory.getLogger(MenuItemsInitializer.class);
+    private static final Logger LOGGER = getLogger(MenuItemsInitializer.class);
 
     static {
         // caching to avoid calculating again and again

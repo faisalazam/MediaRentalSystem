@@ -2,12 +2,12 @@ package com.mediarentalsystem.menu.runner.rent;
 
 import com.mediarentalsystem.menu.runner.MenuOptionRunnable;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static com.mediarentalsystem.utils.Const.LINE_FEED;
+import static org.slf4j.LoggerFactory.getLogger;
 
 public class ReturnRentedMediaObjectsRunner implements MenuOptionRunnable {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ReturnRentedMediaObjectsRunner.class);
+    private static final Logger LOGGER = getLogger(ReturnRentedMediaObjectsRunner.class);
 
     @Override
     public void run() {

@@ -71,12 +71,16 @@ public class MediaRepositoryImpl implements MediaRepository {
     }
 
     private void updateAvailability(Media media, boolean availability) {
-        media.setAvailable(availability);
-        updateAvailability(media);
+        if (updateAvailability(media)) {
+            media.setAvailable(availability);
+        } else {
+            System.out.println("Media with id=" + media.getId() + " could not be rented for some technical issue.");
+        }
     }
 
     @SuppressWarnings("unused")
-    private void updateAvailability(Media media) {
+    private boolean updateAvailability(Media media) {
         // TODO update the file with the availability information in the actual Media json file
+        return true;
     }
 }

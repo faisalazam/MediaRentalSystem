@@ -3,14 +3,14 @@ package com.mediarentalsystem.menu.runner.find;
 import com.mediarentalsystem.menu.runner.MenuOptionRunnable;
 import com.mediarentalsystem.model.media.Media;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
 
 import static com.mediarentalsystem.utils.Const.LINE_FEED;
+import static org.slf4j.LoggerFactory.getLogger;
 
 public class FindMediaObjectsByYearRangeRunner implements MenuOptionRunnable {
-    private static final Logger LOGGER = LoggerFactory.getLogger(FindMediaObjectsByYearRangeRunner.class);
+    private static final Logger LOGGER = getLogger(FindMediaObjectsByYearRangeRunner.class);
 
     @Override
     public void run() {

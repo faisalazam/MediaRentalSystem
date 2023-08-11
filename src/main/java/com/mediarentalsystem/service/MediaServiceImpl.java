@@ -3,8 +3,6 @@ package com.mediarentalsystem.service;
 import com.mediarentalsystem.model.media.Media;
 import com.mediarentalsystem.repository.MediaRepository;
 import com.mediarentalsystem.repository.MediaRepositoryImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.Collection;
@@ -13,7 +11,6 @@ import static com.mediarentalsystem.utils.FileUtils.getFilesToLoad;
 import static java.util.Collections.emptyList;
 
 public class MediaServiceImpl implements MediaService {
-    private static final Logger LOGGER = LoggerFactory.getLogger(MediaServiceImpl.class);
     private final MediaRepository mediaRepository;
 
     public MediaServiceImpl() {

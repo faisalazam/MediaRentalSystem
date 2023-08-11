@@ -24,9 +24,9 @@ public class MediaFileParser {
     }
 
     public Media parse(final File file) {
-        final com.mediarentalsystem.utils.MediaFile mediaFile = new com.mediarentalsystem.utils.MediaFile(file);
+        final MediaFile mediaFile = new MediaFile(file);
         final ObjectMapper objectMapper = new ObjectMapper();
-        Media media;
+        final Media media;
         try {
             media = objectMapper.readValue(file, mediaFile.getMediaClass());
         } catch (IOException e) {

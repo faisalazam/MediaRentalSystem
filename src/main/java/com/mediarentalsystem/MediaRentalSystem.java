@@ -1,18 +1,18 @@
 package com.mediarentalsystem;
 
-import com.mediarentalsystem.menu.MenuHandler;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+import static com.mediarentalsystem.menu.MenuHandler.getInstance;
 import static com.mediarentalsystem.menu.ParentMenu.MAIN;
+import static org.slf4j.LoggerFactory.getLogger;
 
 public class MediaRentalSystem {
     public static final String MAIN_PACKAGE = "com.mediarentalsystem";
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MediaRentalSystem.class);
+    private static final Logger LOGGER = getLogger(MediaRentalSystem.class);
 
     public static void main(String[] args) {
         LOGGER.info("**************MediaRental Application started**************");
-        MenuHandler.getInstance().createMainMenu(MAIN);
+        getInstance().createMainMenu(MAIN);
     }
 }

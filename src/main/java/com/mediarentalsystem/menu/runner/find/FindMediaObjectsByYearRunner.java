@@ -2,14 +2,14 @@ package com.mediarentalsystem.menu.runner.find;
 
 import com.mediarentalsystem.model.media.Media;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
 
 import static com.mediarentalsystem.utils.Const.LINE_FEED;
+import static org.slf4j.LoggerFactory.getLogger;
 
 public class FindMediaObjectsByYearRunner extends AbstractFindMediaObjectsRunner {
-    private static final Logger LOGGER = LoggerFactory.getLogger(FindMediaObjectsByYearRunner.class);
+    private static final Logger LOGGER = getLogger(FindMediaObjectsByYearRunner.class);
 
     @Override
     String getPromptText() {
