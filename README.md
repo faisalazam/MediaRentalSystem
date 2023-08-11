@@ -12,7 +12,7 @@
 <!-- TOC -->
 
 A well written, menu-based Java command line (CLI) application for the management of media rentals. It can also be
-used as a template for any menu-based Java command line (CLI) application. If using it as template, then you'll just 
+used as a template for any menu-based Java command line (CLI) application. If using it as template, then you'll just
 have to add the relevant classes/extensions and leave the rest on this framework to take care.
 
 ## Application's dependencies
@@ -41,29 +41,32 @@ Apart from the above mentioned dependencies, you'll need Java 20 installed on yo
 
 ## Running the application
 
-In order to run the application, either run the [MediaRentalSystem.java][MediaRentalSystem-java] class directly from 
-the IDE, or build the jar and then run the jar file as: 
+In order to run the application, either run the [MediaRentalSystem.java][MediaRentalSystem-java] class directly from
+the IDE, or build the jar and then run the jar file as:
 
 `java -jar out/artifacts/MediaRentalSystem_jar/MediaRentalSystem.jar`.
 
 ## How to build the jar file from IntelliJ IDEA?
 
 In order to build the jar file from IntelliJ IDEA:
-* Go to the project setting by pressing `command + ;` 
+
+* Go to the project setting by pressing `command + ;`
 * Then click on the `Artifacts` from the left side menu
 * Then click on `+`
 * Then click on `Jar` from the opened menu
 * Then click on `From the modules with dependencies...`
 * And then fill in the opened dialog with required info
-* There'll be two option for jar type
-  * extract to the target JAR -> It'll create a fat jar which'll include all the required dependencies
-  * copy to the output directory and link via manifest -> It'll create a jar without including dependencies.
-  It'll rather place the dependencies in the same directory as the jar file and set the path 
-  in [MANIFEST.MF][MANIFEST-MF] as:
+* There'll be two options for jar type
+    * extract to the target JAR -> It'll create a fat jar which'll include all the required dependencies
+    * copy to the output directory and link via manifest -> It'll create a jar without including dependencies.
+      It'll rather place the dependencies in the same directory as the jar file and set the path
+      in [MANIFEST.MF][MANIFEST-MF] as:
 
   `
   Class-Path: javassist-3.29.2-GA.jar slf4j-simple-2.0.7.jar jackson-annotations-2.15.2.jar slf4j-api-2.0.7.jar reflections-0.10.2.jar jackson-databind-2.15.2.jar jackson-core-2.15.2.jar
   `
+* Once configured, then the jar file can be built anytime by clicking on the
+  `Build -> Build Artifacts -> Build`
 
 ![add-artifacts.png](assets/images/add-artifacts.png)
 
@@ -86,12 +89,21 @@ In order to build the jar file from IntelliJ IDEA:
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [jackson-core-jar-url]:https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+
 [jackson-databind-jar-url]:https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+
 [jackson-annotations-jar-url]:https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
+
 [javassist-jar-url]:https://mvnrepository.com/artifact/org.javassist/javassist
+
 [reflections-jar-url]:https://mvnrepository.com/artifact/org.reflections/reflections
+
 [slf4j-api-jar-url]:https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+
 [slf4j-simple-jar-url]:https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+
 [MediaRentalSystem-java]:src/main/java/com/mediarentalsystem/MediaRentalSystem.java
+
 [MANIFEST-MF]:src/main/resources/META-INF/MANIFEST.MF

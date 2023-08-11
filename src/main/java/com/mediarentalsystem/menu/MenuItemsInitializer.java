@@ -17,8 +17,8 @@ import static com.mediarentalsystem.menu.ParentMenu.MAIN;
 import static org.slf4j.LoggerFactory.getLogger;
 
 class MenuItemsInitializer {
-    private static final Map<ParentMenu, Map<String, MenuItem>> ID_TO_ITEM_MAP = new HashMap<>();
     private static final Logger LOGGER = getLogger(MenuItemsInitializer.class);
+    private static final Map<ParentMenu, Map<String, MenuItem>> ID_TO_ITEM_MAP = new HashMap<>();
 
     static {
         // caching to avoid calculating again and again

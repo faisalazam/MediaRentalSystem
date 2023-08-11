@@ -100,6 +100,9 @@ public class EBook extends Media {
 }
 ```
 
+Note the use of `@JsonCreator(mode = PROPERTIES)` and `@JsonProperty("...")` around/in the constructor,
+these annotations will tell Jackson that don't look for no-args constructor and instead, use the annotated constructor.
+
 ## [Media.java][Media-java]
 
 Apart from being a simple parent abstract class, it has a static initialization block:
@@ -118,14 +121,18 @@ That code above, is using reflection to load all available media formats into sy
 And that's how simply creating a new media class extended it from [Media.java][Media-java]
 will start working automagically.
 
-
 [Go Back](../README.md)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [123_EBook-json]:../src/main/resources/media/123_EBook.json
+
 [136_MusicCD-json]:../src/main/resources/media/136_MusicCD.json
+
 [126_MovieDVD-json]:../src/main/resources/media/126_MovieDVD.json
+
 [media-package]:../src/main/java/com/mediarentalsystem/model/media
+
 [Media-java]:../src/main/java/com/mediarentalsystem/model/media/Media.java
